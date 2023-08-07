@@ -22,20 +22,28 @@ Graded by	: Se Jin Kwon
 
 - 구현 함수:
   * init ( ); //플래시 메모리 생성
+  * Print_table ( ) ; //매핑 테이블 출력
   * Flash_read ( ); //플래시 메모리 하드웨어 구성 read, write, erase
   * Flash_write ( );
   * Flash_erase ( );
+  * FTL_read ( );
+  * FTL_write ( );
 
 - Input 명령어: 
   * init megabytes // x megabytes 플래시 메모리 생성
   * R PSN // 해당 PSN 에서 데이터 읽어오기
   * W PSN data // 해당 PSN 섹터에 데이터 적기
   * E PBN // 해당 PBN 블록을 지우기
+  * read LSN
+  * write LSN data
 
 - 결과값:
   * init 의 ouput: x megabytes flash memory ;
-  * read 의 output: PSN 의 data return
-  * write 의 output: write 가 수행된 PSN, 데이터 표시
+  * read 의 output: 해당되는 PSN 와 데이터 출력
+  * write 의 output: done,
+    * 실제로 수행된 FLASH_read 횟수
+    * 실제로 수행된 FLASH_write 횟수
+    * 실제로 수행된 FLASH_erase 횟수 예) 쓰기 완료,, 쓰기 5 회, 지우기 연산 (PBN 13)
 
 
 
